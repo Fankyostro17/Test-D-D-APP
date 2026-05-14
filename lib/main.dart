@@ -1,0 +1,38 @@
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'screens/home_screen.dart';
+import 'providers/character_provider.dart';
+import 'providers/dice_provider.dart';
+import 'providers/game_provider.dart';
+
+void main() {
+  runApp(const TTRPGCompanionApp());
+}
+
+class TTRPGCompanionApp extends StatelessWidget {
+  const TTRPGCompanionApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => CharacterProvider()),
+        ChangeNotifierProvider(create: (_) => DiceProvider()),
+        ChangeNotifierProvider(create: (_) => GameProvider()),
+      ],
+      child: MaterialApp(
+        title: 'TTRPG Companion',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: const Color(0xFF8B4513),
+            brightness: Brightness.dark,
+          ),
+          useMaterial3: true,
+          fontFamily: 'GameFont',
+        ),
+        home: const HomeScreen(),
+      ),
+    );
+  }
+}
