@@ -167,7 +167,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                               boxShadow: _portalActive
                                   ? [
                                       BoxShadow(
-                                        color: FantasyColors.purple.withOpacity(0.6),
+                                        color: FantasyColors.royalPurple.withOpacity(0.6),
                                         blurRadius: 40,
                                         spreadRadius: 15,
                                       ),
@@ -287,7 +287,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                       ? FantasyColors.gold
                       : index % 3 == 1
                           ? FantasyColors.amber
-                          : FantasyColors.purple,
+                          : FantasyColors.royalPurple,
                 ),
               ),
             ),
