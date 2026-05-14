@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'dart:async';
 import '../utils/fantasy_colors.dart';
 
@@ -21,6 +21,11 @@ class _SplashScreenState extends State<SplashScreen>
   void initState() {
     super.initState();
 
+    // Setup animazioni immediatamente
+    _setupAnimations();
+  }
+
+  void _setupAnimations() {
     _animationController = AnimationController(
       duration: const Duration(milliseconds: 2000),
       vsync: this,
@@ -86,6 +91,7 @@ class _SplashScreenState extends State<SplashScreen>
               child: SvgPicture.asset(
                 'assets/svg/backgrounds/pattern.svg',
                 fit: BoxFit.cover,
+                cacheColorFilter: true,
               ),
             ),
           ),
@@ -132,6 +138,7 @@ class _SplashScreenState extends State<SplashScreen>
                                 FantasyColors.cream,
                                 BlendMode.srcIn,
                               ),
+                              cacheColorFilter: true,
                             ),
                           ),
                         ),
