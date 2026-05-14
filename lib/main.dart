@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'screens/welcome_screen.dart';
 import 'screens/splash_screen.dart';
 import 'screens/home_screen.dart';
 import 'providers/character_provider.dart';
@@ -41,7 +42,8 @@ class TTRPGCompanionApp extends StatelessWidget {
         ),
         initialRoute: '/',
         routes: {
-          '/': (context) => const SplashScreen(),
+          '/': (context) => const WelcomeScreen(),
+          '/splash': (context) => const SplashScreen(),
           '/home': (context) => const HomeScreen(),
         },
       ),

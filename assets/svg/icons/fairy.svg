@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300">
+  <defs>
+    <!-- Gradiente per le ali -->
+    <linearGradient id="wingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a8e6cf;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#48c9b0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1abc9c;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradiente per il corpo -->
+    <radialGradient id="bodyGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#f9e79f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f1c40f;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- Gradiente per i capelli -->
+    <linearGradient id="hairGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5cba7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d4ac6e;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Filtro glow -->
+    <filter id="fairyGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Ala posteriore sinistra -->
+  <g id="backWingLeft">
+    <ellipse cx="60" cy="120" rx="35" ry="50" fill="url(#wingGradient)" opacity="0.7" filter="url(#fairyGlow)">
+      <animate attributeName="ry" values="50;45;50" dur="0.3s" repeatCount="indefinite" />
+      <animate attributeName="rx" values="35;32;35" dur="0.3s" repeatCount="indefinite" />
+    </ellipse>
+  </g>
+  
+  <!-- Ala posteriore destra -->
+  <g id="backWingRight">
+    <ellipse cx="140" cy="120" rx="35" ry="50" fill="url(#wingGradient)" opacity="0.7" filter="url(#fairyGlow)">
+      <animate attributeName="ry" values="50;45;50" dur="0.3s" repeatCount="indefinite" />
+      <animate attributeName="rx" values="35;32;35" dur="0.3s" repeatCount="indefinite" />
+    </ellipse>
+  </g>
+  
+  <!-- Corpo della fatina -->
+  <ellipse cx="100" cy="140" rx="15" ry="25" fill="url(#bodyGradient)" filter="url(#fairyGlow)" />
+  
+  <!-- Testa -->
+  <circle cx="100" cy="105" r="18" fill="#f5d5b0" filter="url(#fairyGlow)" />
+  
+  <!-- Capelli -->
+  <path d="M 82 95 Q 100 70 118 95 Q 125 110 118 120 Q 100 100 82 120 Q 75 110 82 95" 
+        fill="url(#hairGradient)" />
+  
+  <!-- Occhi -->
+  <circle cx="93" cy="103" r="3" fill="#2c3e50" />
+  <circle cx="107" cy="103" r="3" fill="#2c3e50" />
+  
+  <!-- Sorriso -->
+  <path d="M 95 112 Q 100 117 105 112" fill="none" stroke="#e74c3c" stroke-width="1.5" stroke-linecap="round" />
+  
+  <!-- Ala anteriore sinistra -->
+  <g id="frontWingLeft">
+    <ellipse cx="70" cy="110" rx="40" ry="60" fill="url(#wingGradient)" opacity="0.9" filter="url(#fairyGlow)">
+      <animate attributeName="ry" values="60;55;60" dur="0.3s" repeatCount="indefinite" />
+      <animate attributeName="rx" values="40;37;40" dur="0.3s" repeatCount="indefinite" />
+    </ellipse>
+    <!-- Venature delle ali -->
+    <path d="M 75 110 Q 85 130 90 150" fill="none" stroke="#16a085" stroke-width="1" opacity="0.5" />
+    <path d="M 75 110 Q 65 130 60 150" fill="none" stroke="#16a085" stroke-width="1" opacity="0.5" />
+  </g>
+  
+  <!-- Ala anteriore destra -->
+  <g id="frontWingRight">
+    <ellipse cx="130" cy="110" rx="40" ry="60" fill="url(#wingGradient)" opacity="0.9" filter="url(#fairyGlow)">
+      <animate attributeName="ry" values="60;55;60" dur="0.3s" repeatCount="indefinite" />
+      <animate attributeName="rx" values="40;37;40" dur="0.3s" repeatCount="indefinite" />
+    </ellipse>
+    <!-- Venature delle ali -->
+    <path d="M 125 110 Q 115 130 110 150" fill="none" stroke="#16a085" stroke-width="1" opacity="0.5" />
+    <path d="M 125 110 Q 135 130 140 150" fill="none" stroke="#16a085" stroke-width="1" opacity="0.5" />
+  </g>
+  
+  <!-- Braccia -->
+  <path d="M 88 130 Q 75 140 70 150" fill="none" stroke="#f5d5b0" stroke-width="4" stroke-linecap="round" />
+  <path d="M 112 130 Q 125 140 130 150" fill="none" stroke="#f5d5b0" stroke-width="4" stroke-linecap="round" />
+  
+  <!-- Gamba sinistra -->
+  <path d="M 92 160 Q 88 180 85 195" fill="none" stroke="#f5d5b0" stroke-width="3.5" stroke-linecap="round" />
+  
+  <!-- Gamba destra -->
+  <path d="M 108 160 Q 112 180 115 195" fill="none" stroke="#f5d5b0" stroke-width="3.5" stroke-linecap="round" />
+  
+  <!-- Bacchetta magica -->
+  <g>
+    <line x1="130" y1="150" x2="145" y2="135" stroke="#d4ac6e" stroke-width="2" stroke-linecap="round" />
+    <circle cx="145" cy="135" r="5" fill="#f1c40f" filter="url(#fairyGlow)">
+      <animate attributeName="r" values="5;6;5" dur="0.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="0.5s" repeatCount="indefinite" />
+    </circle>
+    <!-- Scintille dalla bacchetta -->
+    <circle cx="150" cy="130" r="2" fill="#f39c12" opacity="0.8">
+      <animate attributeName="cy" values="130;125;130" dur="0.4s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="150;152;150" dur="0.4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="0.4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="155" cy="128" r="1.5" fill="#f1c40f" opacity="0.7">
+      <animate attributeName="cy" values="128;123;128" dur="0.5s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="155;158;155" dur="0.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="0.5s" repeatCount="indefinite" />
+    </circle>
+  </g>
+  
+  <!-- Particelle magiche intorno alla fatina -->
+  <g fill="#f1c40f" filter="url(#fairyGlow)">
+    <circle cx="50" cy="100" r="2">
+      <animate attributeName="cy" values="100;95;100" dur="0.6s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="0.6s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="160" cy="110" r="1.5">
+      <animate attributeName="cy" values="110;105;110" dur="0.7s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="0.7s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="80" cy="80" r="1.8">
+      <animate attributeName="cy" values="80;75;80" dur="0.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="0.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="120" cy="75" r="2">
+      <animate attributeName="cy" values="75;70;75" dur="0.8s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="0.8s" repeatCount="indefinite" />
+    </circle>
+  </g>
+</svg>

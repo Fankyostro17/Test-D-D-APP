@@ -2,6 +2,7 @@
 # Dependencies
 .dart_tool/
 .build/
+.packages
 
 # Logs and temp files
 *.log
@@ -12,23 +13,22 @@
 .env.local
 *.env.*
 
-# IDE
+# Editor/IDE
 .idea/
 .vscode/
 *.swp
 *.swo
 
-# OS
-.DS_Store
-Thumbs.db
-
 # Coverage
 coverage/
-htmlcov/
-.coverage
+lcov.info
 
-# Build artifacts
-*.o
-*.obj
-*.out
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# OS generated files
+.DS_Store
+Thumbs.db
 ```
